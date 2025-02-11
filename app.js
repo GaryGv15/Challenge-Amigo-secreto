@@ -3,6 +3,9 @@ let listaDeAmigos = []; // Inicializa un arreglo vacío para almacenar los nombr
 
 // Funcion para agregar el nombre a la lista
 function agregarAmigo() {
+    // Limpia el mensaje del amigo secreto sorteado
+    document.getElementById("resultado").innerHTML = "";
+    
     // Obtiene el valor ingresado en el campo de texto con id "amigo"
     let nombreDeAmigo = document.getElementById("amigo").value;
     
@@ -87,6 +90,9 @@ function sortearAmigo() {
     let li = document.createElement("li");
     li.textContent = "El amigo secreto sorteado es: " + amigoAleatorio;
     resultado.appendChild(li);
+    
+    // Borra los elementos guardados en la lista para reiniciar
+    listaDeAmigos = [];
     
     // Retorna el nombre del amigo seleccionado aleatoriamente
     return amigoAleatorio;
